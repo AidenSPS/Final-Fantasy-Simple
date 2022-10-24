@@ -1,0 +1,26 @@
+.textFont{
+  color: white;
+  font-size: 10pt;
+  font-family: 'Press Start 2P';
+}
+
+body{
+  background-color: black;
+}
+
+#changeOptions, #progressStory{
+  margin: auto;
+  display: flex;
+}
+
+#storyText{
+  padding: 24px;
+}
+
+button{ 
+  text-align: center;
+  margin: auto;
+  display: flex;
+  border: none;
+  border-radius: 8px;
+}

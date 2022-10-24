@@ -1,0 +1,25 @@
+index.html is to give the start
+
+classInfo.html is to give insight to all the possible classes
+
+roleSelect.js is to send you to classInfo.html
+
+script.js is to send you to selectClass.html
+
+selectClass is to give information to setup.js
+
+setup.js stores/holds information relative to the party and sets their inventory. Can be changed later via use of story.js
+
+stats.js sends monster information (ie health, spellList, spellOrder etc.)
+
+story.html displays order of story and shows the user the story and gives them options to select. 
+
+story.js holds all of the story elements and gives options to change specific things. Can also change things like gold and current spells if applicable. Ths also holds the sceneNumber variable which determines what scene you are at and changes the options and storyText box accordingly. 
+
+style.css styles the pre-story interface
+
+story.css styles the story background and all of the "option/select" drop down menu. 
+
+info.js displays all of the party info (ie what a fighter does, what a white mage can cast etc.)
+
+melee.js holds the source code to the melee script and codes all RandomEncounters. 
