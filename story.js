@@ -1,11 +1,9 @@
-var option1 = document.getElementById("option1");
-var option2 = document.getElementById("option2");
-var option3 = document.getElementById("option3");
-var option4 = document.getElementById("option4");
-var option5 = document.getElementById("option5");
 var text = document.getElementById("storyText");
 var continueButton = document.getElementById("progressStory");
-
+var options = []; //to set options
+var answer = null; //what happens (always sets options through the .setOptions method. 
+//Always will switch it to get to the next part of the story)--------------------------^
+var dropdown = document.getElemnetById("choices");
 function progressStory(){
   storyIntroduce();
   outsideCorneilia();
@@ -23,15 +21,16 @@ function storyIntroduce(){ //INTRO
 }
 function outsideCorneilia(){ //ST
   text.innerHTML = "You and your party are outside of Corneilia. What do you want to do?";
-  option1.innerHTML = "Enter the City";
-  option2.innerHTML = "Walk Around";
-  if(option1 == "Enter the City"){
-    continueButton.onClick = enterCorneilia();
+  options = ["Enter the City","Walk Around",];
+  answer = setOptions(options);
+  switch(answer){
+    case "Enter the City":
+      enterCorneilia();
+    case "Walk Around":
+      randomL1();
+    }
   }
-  if(option2 == "Walk Around"){
-    continueButton.onClick = walkAround();
-  }
-}
+
 
 function walkAround(){ //RC
     text.innerHTML = "TESTING RANDOM ENCOUNTERS"
@@ -213,4 +212,14 @@ function fightChaos(){
 }
 function gameOver(){
   text.innerHTML = ""
+}
+
+function setOptions(options) {
+  while (dropdown.options.length) {
+    dropdown.remove(0);
+  }
+  for (var i = 0; i < options.length; i++) {
+    var option = new Option(options[i]);
+    dropdown.options.add(option);
+  }
 }
