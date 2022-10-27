@@ -26,3 +26,11 @@ button{
 #maxClassText{
   text-align: center;
 }
+
+#choices{
+  text-align: center;
+  margin: auto;
+  display: flex;
+  border: none;
+  border-radius: 8px;
+}
