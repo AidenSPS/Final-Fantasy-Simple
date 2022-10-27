@@ -1,27 +1,59 @@
 var text = document.getElementById("storyText");
-var continueButton = document.getElementById("progressStory");
-var options = []; //to set options
-var answer = null; //what happens (always sets options through the .setOptions method. 
-//Always will switch it to get to the next part of the story)--------------------------^
-var dropdown = document.getElementById("choices");
+var continueButton = document.getElementById("storyProgress");
+var options = []; //to set the options of the dropdown
+var answer = null;
+var dropdown = document.getElementById("choices"); //The main <select> tag in story.html
+
 function progressStory(){
   storyIntroduce();
   outsideCorneilia();
-  
 }
+
+function setOptions(options) {
+  while (dropdown.options.length) {
+    dropdown.remove(0);
+  }
+  for (var i = 0; i < options.length; i++) {
+    var option = new Option(options[i]);
+    dropdown.options.add(option);
+  }
+}
+
+
+//STORY FUNCTION on Line 57
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Story Functions
-function storyIntroduce(){ //INTRO
-  text.innerHTML = "The world veils in darkness. The wind stops, the ocean roars wild, the earth lies in decay, fire blazes across the land. There was a prophecy which states 'When the world lies in darkness, four Warriors of Light will come and bring light to the darkend world'. After a long time, four brave souls arrive holding mysterious orbs.";
-  option1.innerHTML = "Continue";
-  if(option1 == "Continue"){
-    continueButton.onClick = outsideCorneilia();
-  }
+function storyIntroduce(){ //INTRO:
+ text.innerHTML = "The world veils in darkness. The wind stops, the ocean roars wild, the earth lies in decay, fire blazes across the land. There was a prophecy which states 'When the world lies in darkness, four Warriors of Light will come and bring light to the darkend world'. After a long time, four brave souls arrive holding mysterious orbs.";
+ options = ["Continue"];
+ answer = setOptions(options) //THIS IS THE ISSUE
 }
 function outsideCorneilia(){ //ST
   text.innerHTML = "You and your party are outside of Corneilia. What do you want to do?";
-  options = ["Enter the City","Walk Around",];
+  options = ["Enter the City","Walk Around"];
   answer = setOptions(options);
   switch(answer){
     case "Enter the City":
@@ -29,11 +61,11 @@ function outsideCorneilia(){ //ST
     case "Walk Around":
       randomL1();
     }
-  }
+}
 
 
 function walkAround(){ //RC
-    text.innerHTML = "TESTING RANDOM ENCOUNTERS"
+  text.innerHTML = "TESTING RANDOM ENCOUNTERS"
 }
 function enterCorneilia(){ //ST
   text.innerHTML = "TEST"
@@ -212,14 +244,4 @@ function fightChaos(){
 }
 function gameOver(){
   text.innerHTML = ""
-}
-
-function setOptions(options) {
-  while (dropdown.options.length) {
-    dropdown.remove(0);
-  }
-  for (var i = 0; i < options.length; i++) {
-    var option = new Option(options[i]);
-    dropdown.options.add(option);
-  }
 }
