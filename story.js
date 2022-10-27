@@ -4,19 +4,19 @@ var options = []; //to set options
 var answer = null; //what happens (always sets options through the .setOptions method. 
 //Always will switch it to get to the next part of the story)--------------------------^
 var dropdown = document.getElementById("choices");
-
-
 function progressStory(){
   storyIntroduce();
+  outsideCorneilia();
+  
 }
 
 
 //Story Functions
 function storyIntroduce(){ //INTRO
   text.innerHTML = "The world veils in darkness. The wind stops, the ocean roars wild, the earth lies in decay, fire blazes across the land. There was a prophecy which states 'When the world lies in darkness, four Warriors of Light will come and bring light to the darkend world'. After a long time, four brave souls arrive holding mysterious orbs.";
-  options = ["Continue"]
+  option1.innerHTML = "Continue";
   if(option1 == "Continue"){
-    continueButton.setAttribute("onClick","outsideCorneilia()");
+    continueButton.onClick = outsideCorneilia();
   }
 }
 function outsideCorneilia(){ //ST
