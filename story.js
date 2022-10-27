@@ -4,6 +4,8 @@ var options = []; //to set options
 var answer = null; //what happens (always sets options through the .setOptions method. 
 //Always will switch it to get to the next part of the story)--------------------------^
 var dropdown = document.getElementById("choices");
+
+
 function progressStory(){
   storyIntroduce();
   outsideCorneilia();
