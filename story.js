@@ -8,17 +8,15 @@ var dropdown = document.getElementById("choices");
 
 function progressStory(){
   storyIntroduce();
-  outsideCorneilia();
-  
 }
 
 
 //Story Functions
 function storyIntroduce(){ //INTRO
   text.innerHTML = "The world veils in darkness. The wind stops, the ocean roars wild, the earth lies in decay, fire blazes across the land. There was a prophecy which states 'When the world lies in darkness, four Warriors of Light will come and bring light to the darkend world'. After a long time, four brave souls arrive holding mysterious orbs.";
-  option1.innerHTML = "Continue";
+  options = ["Continue"]
   if(option1 == "Continue"){
-    continueButton.onClick = outsideCorneilia();
+    continueButton.setAttribute("onClick","outsideCorneilia()");
   }
 }
 function outsideCorneilia(){ //ST
