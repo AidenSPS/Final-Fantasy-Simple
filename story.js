@@ -5,11 +5,48 @@ var option1 = document.getElementById("option1");
 var answer = null; //what happens (always sets options through the .setOptions method. 
 //Always will switch it to get to the next part of the story)--------------------------^
 var dropdown = document.getElementById("choices");
-/* function progressStory(){
-  storyIntroduce();
-  outsideCorneilia();
+
+function progressStory(answer) {  // Matches Scenes  - replace with yours
+  if (answer == "First Time") {
+    meetMilo();
+  } 
   
-} */
+  else if (answer == "Second Life") {
+    discoverTollbooth();
+  } 
+  else if (answer == "Sigh") {
+    walkingHome();
+  } 
+  
+  else if (answer == "Sigh again") {
+    discoverTollbooth();
+  } 
+  
+  else if (answer == "Unpack it") {
+    unpackTollbooth();
+  } 
+  
+  else if (answer == "Sleep on it") {
+    wildNightmares();
+  }
+  else if (answer == "Tell mom") {
+    momCantSeeIt();
+  }
+  
+  else if (answer == "Assemble it") {
+    enterKingdomOfWisdom();
+  }
+}
+
+function setOptions(options) { //Function limits the amount of options there are to match the
+  while (dropdown.options.length) {
+    dropdown.remove(0);
+  }
+  for (var i = 0; i < options.length; i++) {
+    var option = new Option(options[i]);
+    dropdown.options.add(option);
+  }
+}
 
 
 //Story Functions
@@ -22,7 +59,7 @@ function storyIntroduce(){ //INTRO
       outsideCorneilia();
       break;
     default:
-      outsideCroneilia();
+      outsideCorneilia();
       console.log("Error at storyIntroduce");
   }
 }
@@ -220,14 +257,4 @@ function fightChaos(){
 }
 function gameOver(){
   text.innerHTML = "";
-}
-
-function setOptions(options) {
-  while (dropdown.options.length) {
-    dropdown.remove(0);
-  }
-  for (var i = 0; i < options.length; i++) {
-    var option = new Option(options[i]);
-    dropdown.options.add(option);
-  }
 }
