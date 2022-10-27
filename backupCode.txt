@@ -1,22 +1,65 @@
 var text = document.getElementById("storyText");
 var continueButton = document.getElementById("progressStory");
 var options = []; //to set options
+var option1 = document.getElementById("option1");
 var answer = null; //what happens (always sets options through the .setOptions method. 
 //Always will switch it to get to the next part of the story)--------------------------^
 var dropdown = document.getElementById("choices");
-function progressStory(){
-  storyIntroduce();
-  outsideCorneilia();
+
+function checkAnswers(answer) {  // Matches Scenes  - replace with yours
+  if (answer == "Continue") {
+    storyIntroduce();
+  } 
+  else if (answer == "Second Life") {
+    discoverTollbooth();
+  } 
+  else if (answer == "Sigh") {
+    walkingHome();
+  } 
   
+  else if (answer == "Sigh again") {
+    discoverTollbooth();
+  } 
+  
+  else if (answer == "Unpack it") {
+    unpackTollbooth();
+  } 
+  
+  else if (answer == "Sleep on it") {
+    wildNightmares();
+  }
+  else if (answer == "Tell mom") {
+    momCantSeeIt();
+  }
+  
+  else if (answer == "Assemble it") {
+    enterKingdomOfWisdom();
+  }
+}
+
+function setOptions(options) { //Function limits the amount of options there are to match the
+  while (dropdown.options.length) {
+    dropdown.remove(0);
+  }
+  for (var i = 0; i < options.length; i++) {
+    var option = new Option(options[i]);
+    dropdown.options.add(option);
+  }
 }
 
 
 //Story Functions
 function storyIntroduce(){ //INTRO
   text.innerHTML = "The world veils in darkness. The wind stops, the ocean roars wild, the earth lies in decay, fire blazes across the land. There was a prophecy which states 'When the world lies in darkness, four Warriors of Light will come and bring light to the darkend world'. After a long time, four brave souls arrive holding mysterious orbs.";
-  option1.innerHTML = "Continue";
-  if(option1 == "Continue"){
-    continueButton.onClick = outsideCorneilia();
+  options = ["Continue"];
+  answer = setOptions(options);
+  switch(answer){
+    case "Continue":
+      outsideCorneilia();
+      break;
+    default:
+      outsideCorneilia();
+      console.log("Error at storyIntroduce");
   }
 }
 function outsideCorneilia(){ //ST
@@ -26,200 +69,191 @@ function outsideCorneilia(){ //ST
   switch(answer){
     case "Enter the City":
       enterCorneilia();
+       break;
     case "Walk Around":
-      randomL1();
+      walkAround();
     }
   }
 
 
 function walkAround(){ //RC
-    text.innerHTML = "TESTING RANDOM ENCOUNTERS"
+    text.innerHTML = "TESTING RANDOM ENCOUNTERS";
 }
 function enterCorneilia(){ //ST
-  text.innerHTML = "TEST"
+  text.innerHTML = "TEST";
 }
 function shop(){ //SH 
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toKing(){ //ST
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 
 function toTOF(){ //ST
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function fightGarland(){ //ST + BF
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function savePrincess(){ //ST
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function buildBridge(){ //ST
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function outsidePravoka(){ //ST
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function enterProvoka(){ //ST
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function pirateAmbush(){ //ST + BF
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function pirateWin(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function enterElfland(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function enterElvenPalace(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function exploreRuinedCastle(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toMarsh(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toCastle(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function fightEvilKing(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toWitchCave(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toPalace(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function enterMelmond(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toEarthOne(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toVampire(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function fightVampire(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function exitEarthOne(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toSarda(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function obtainRod(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toEarthTwo(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function useRod(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function fightLich(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function exitEarthTwo(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function enterLake(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function obtainCanoe(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toGulg(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function fightKary(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function exitGulg(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toIceCave(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function getRosettaStone(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function getAirship(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function enterOnrac(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function getBottle(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toGaia(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function getOxyale(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function enterWaterShrine(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function fightKraken(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function exitShrine(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function translateSlab(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function obtainChime(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function obtainCube(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toMirageTower(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function fightTiamat(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function exitMirageTower(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function toTOFR(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function lichTOFR(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function karyTOFR(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function krakenTOFR(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function tiamatTOFR(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function finalBoss(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function fightChaos(){
-  text.innerHTML = ""
+  text.innerHTML = "";
 }
 function gameOver(){
-  text.innerHTML = ""
-}
-
-function setOptions(options) {
-  while (dropdown.options.length) {
-    dropdown.remove(0);
-  }
-  for (var i = 0; i < options.length; i++) {
-    var option = new Option(options[i]);
-    dropdown.options.add(option);
-  }
+  text.innerHTML = "";
 }
