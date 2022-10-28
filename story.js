@@ -6,7 +6,6 @@ var dropdown = document.getElementById("choices"); //The main <select> tag in st
 
 function progressStory(){
   storyIntroduce();
-  outsideCorneilia();
 }
 
 function setOptions(options) {
